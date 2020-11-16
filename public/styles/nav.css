@@ -1,0 +1,20 @@
+nav {
+  background: #4056a1;
+  color: white;
+  height: 120px;
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+span {
+  display: flex;
+  font-family: "Bungee", cursive;
+  font-size: 150%;
+}
+
+a {
+  display: flex;
+  font-size: 110%;
+}

@@ -28,8 +28,20 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  border: dashed cyan;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  width: 90%;
+  margin: 0 auto;
+  border: dashed;
+  align-content: center;
+}
