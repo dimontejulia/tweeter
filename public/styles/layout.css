@@ -6,13 +6,23 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+nav span {
+  font-family: "Bungee", cursive;
+}
 
 body {
   color: #545149;
