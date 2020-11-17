@@ -1,3 +1,49 @@
-section {
-  border: dashed chartreuse;
+article {
+  border: solid #545149;
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 5em;
+  padding: 20px;
+  flex-direction: column;
+  align-content: center;
+}
+article:hover {
+  box-shadow: solid #cccee4;
+}
+
+article header {
+  display: flex;
+  justify-content: flex-start;
+  align-content: baseline;
+}
+
+article header img {
+  padding-right: 10px;
+}
+
+.push {
+  margin-left: auto;
+  font-weight: bold;
+  color: #cccee4;
+}
+
+.tweet-body {
+  border-bottom: solid #545149;
+  border-width: thick;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px;
+}
+
+article footer p {
+  padding: 0px;
+  margin: 0px;
+  font-size: medium;
 }
