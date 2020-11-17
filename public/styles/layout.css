@@ -28,7 +28,6 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  border: dashed cyan;
 }
 
 /*
@@ -36,12 +35,7 @@ body {
  */
 
 main {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   width: 90%;
   margin: 0 auto;
-  border: dashed;
   align-content: center;
 }

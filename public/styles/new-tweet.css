@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+/* form footer includes tweet button and character count  */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* input field  */
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  background-color: #f4f1ec;
+  border-bottom: solid #545149;
+  border-width: thick;
+  padding-top: 20px;
+  margin-bottom: 15px;
+}
+/* tweet button  */
+button {
+  display: flex;
+  background: #4056a1;
+  color: white;
+  font-family: "Bungee", cursive;
+}
+/* character count  */
+output {
+  display: flex;
+  font-family: "Bungee", cursive;
+}
