@@ -34,3 +34,7 @@ output {
   display: flex;
   font-family: "Bungee", cursive;
 }
+
+.negativeNum {
+  color: red;
+}
