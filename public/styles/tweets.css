@@ -8,7 +8,8 @@ article {
   align-content: center;
 }
 article:hover {
-  box-shadow: solid #cccee4;
+  box-shadow: 6px 6px #cccee4;
+  font-weight: bold;
 }
 
 article header {
@@ -21,7 +22,11 @@ article header img {
   padding-right: 10px;
 }
 
-.push {
+.handle {
+  color: #f4f1ec;
+}
+
+article:hover .handle {
   margin-left: auto;
   font-weight: bold;
   color: #cccee4;
