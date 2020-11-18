@@ -46,7 +46,7 @@
       </div>
       <br />
       <div>
-        <h2>Your Name</h2>
+        <h2>Julia</h2>
       </div>
     </header>
 
@@ -54,7 +54,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="form-footer">
@@ -64,20 +64,7 @@
         </form>
       </section>
       <!-- tweet container -->
-      <article>
-        <header>
-          <img src="/images/avatar.png" />
-          <p>Newton</p>
-          <a class="handle">@SirIssac</a>
-        </header>
-        <p class="tweet-body">
-          If I have seen further it is by standing on the shoulders of giants.
-        </p>
-        <footer>
-          <p>10 days ago</p>
-          <p class="symbols">&#9873 &#10227; &#10084;</p>
-        </footer>
-      </article>
+      <section id="tweets-container"></section>
     </main>
   </body>
 

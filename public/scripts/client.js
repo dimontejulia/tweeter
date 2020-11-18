@@ -10,7 +10,7 @@ const createTweetElement = function (tweetObj) {
   <header>
     <img src="${tweetObj.user.avatars}" />
     <p>${tweetObj.user.name}</p>
-    <a class="handle">${tweetObj.user.handle}</a>
+    <a class="handle" href="#">${tweetObj.user.handle}</a>
   </header>
   <p class="tweet-body">
   ${tweetObj.content.text}
@@ -24,21 +24,39 @@ const createTweetElement = function (tweetObj) {
   return tweet;
 };
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  user: {
-    name: "Newton",
-    avatars: "https://i.imgur.com/73hZDYK.png",
-    handle: "@SirIsaac",
-  },
-  content: {
-    text: "If I have seen further it is by standing on the shoulders of giants",
-  },
-  created_at: 1461116232227,
+//taking in an array of tweet objects and then appending each one to the #tweets-container
+const renderTweets = function (arrOfTweets) {
+  // loops through tweets
+  for (const tweet of arrOfTweets) {
+    $("#tweets-container").append(createTweetElement(tweet));
+  }
 };
 
-const $tweet = createTweetElement(tweetData);
+// Test / driver code (temporary). Eventually will get this from the server.
+const data = [
+  {
+    user: {
+      name: "Newton",
+      avatars: "https://i.imgur.com/73hZDYK.png",
+      handle: "@SirIsaac",
+    },
+    content: {
+      text:
+        "If I have seen further it is by standing on the shoulders of giants",
+    },
+    created_at: 1461116232227,
+  },
+  {
+    user: {
+      name: "Descartes",
+      avatars: "https://i.imgur.com/nlhLi3I.png",
+      handle: "@rd",
+    },
+    content: {
+      text: "Je pense , donc je suis",
+    },
+    created_at: 1461113959088,
+  },
+];
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$("#tweets-container").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+$(document).ready(() => renderTweets(data));
