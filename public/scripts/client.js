@@ -56,5 +56,7 @@ $(document).ready(() => {
       method: "POST",
       data: serializedForm,
     }).then(() => loadTweets());
+
+    $("#tweet-text").val("");
   });
 });
