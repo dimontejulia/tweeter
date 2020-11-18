@@ -28,7 +28,15 @@ const createTweetElement = function (tweetObj) {
 const renderTweets = function (arrOfTweets) {
   // loops through tweets
   for (const tweet of arrOfTweets) {
-    $("#tweets-container").append(createTweetElement(tweet));
+    $("#tweets-container").prepend(createTweetElement(tweet));
+  }
+};
+
+const validateTweet = function (tweetBody) {
+  if (tweetBody.length <= 140 && tweetBody !== "" && tweetBody !== null) {
+    return true;
+  } else {
+    alert("invalid tweet!");
   }
 };
 
@@ -49,14 +57,15 @@ $(document).ready(() => {
     event.preventDefault();
 
     const tweetBody = $("form textarea").val();
-    const serializedForm = $("form").serialize();
-    //ajax request
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: serializedForm,
-    }).then(() => loadTweets());
-
-    $("#tweet-text").val("");
+    if (validateTweet(tweetBody)) {
+      const serializedForm = $("form").serialize();
+      //ajax request
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: serializedForm,
+      }).then(() => loadTweets());
+      $("#tweet-text").val("");
+    }
   });
 });
