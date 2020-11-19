@@ -1,0 +1,30 @@
+/* Mobile Styles */
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav {
+    background: #f7d6ff;
+    background-color: #f7d6ff;
+    background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .profile-header {
+    margin-top: 5em;
+    width: 33%;
+    float: left;
+  }
+  .container {
+    margin-top: 5em;
+    width: 60%;
+    float: right;
+  }
+  .tweets-container {
+    width: 60%;
+    float: right;
+  }
+}

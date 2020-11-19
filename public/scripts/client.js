@@ -33,13 +33,6 @@ const renderTweets = function (arrOfTweets) {
   }
 };
 
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  console.log(div);
-  return div.innerHTML;
-};
-
 const validateTweet = function (tweetBody) {
   if (tweetBody.length <= 140 && tweetBody !== "" && tweetBody !== null) {
     $("#error").hide();
