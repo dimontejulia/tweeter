@@ -9,9 +9,16 @@ November 19, 2020
 
 ## Screenshots
 
+Screenshot of Composing a Tweet
 !["Screenshot of Composing a Tweet"](https://github.com/dimontejulia/tweeter/blob/master/docs/composeTweet.png)
+
+Screenshot of Hovering over a tweet revealing handle
 !["Screenshot of Hovering over a tweet revealing handle"](https://github.com/dimontejulia/tweeter/blob/master/docs/hoverTweet.png)
+
+Screenshot of an Invalid Tweet Error Message (>140 characters)
 !["Screenshot of an Invalid Tweet Error Message (>140 characters)"](https://github.com/dimontejulia/tweeter/blob/master/docs/invalidTweet.png)
+
+Screenshot of Tablet/Small window design
 !["Screenshot of Tablet/Small window design"](https://github.com/dimontejulia/tweeter/blob/master/docs/tabletView.png)
 
 ## Getting Started
