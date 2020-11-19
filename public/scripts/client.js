@@ -33,6 +33,7 @@ const renderTweets = function (arrOfTweets) {
   }
 };
 
+//validates that tweet is valid, otherwise display error message
 const validateTweet = function (tweetBody) {
   if (tweetBody.length <= 140 && tweetBody !== "" && tweetBody !== null) {
     $("#error").hide();
@@ -45,6 +46,7 @@ const validateTweet = function (tweetBody) {
 
 $(document).ready(() => {
   $("#error").hide();
+  $(".new-tweet").hide();
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
@@ -56,6 +58,10 @@ $(document).ready(() => {
   };
 
   loadTweets();
+
+  $("body > nav > a").on("click", function () {
+    $(".new-tweet").toggle();
+  });
 
   $("form").on("submit", (event) => {
     event.preventDefault();

@@ -19,8 +19,24 @@ span {
 a {
   display: flex;
   font-size: 110%;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: pink;
 }
 
 b {
   margin-right: 5px;
+}
+
+#bird {
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  padding-right: 5px;
+}
+a:hover #bird {
+  top: -10px;
 }
