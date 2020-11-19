@@ -68,14 +68,16 @@ $(document).ready(() => {
     event.preventDefault();
 
     const tweetBody = validateTweet($("form textarea").val());
-    const serializedForm = $("form").serialize();
-    //ajax request
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data: serializedForm,
-    }).then(() => loadTweets());
-    $("#tweet-text").val("");
-    $(".counter").val(140);
+    if (tweetBody) {
+      const serializedForm = $("form").serialize();
+      //ajax request
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: serializedForm,
+      }).then(() => loadTweets());
+      $("#tweet-text").val("");
+      $(".counter").val(140);
+    }
   });
 });

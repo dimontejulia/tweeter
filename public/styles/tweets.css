@@ -38,6 +38,7 @@ article:hover .handle {
   padding-left: 15px;
   padding-bottom: 10px;
   margin-bottom: 5px;
+  word-wrap: break-word;
 }
 
 article footer {
