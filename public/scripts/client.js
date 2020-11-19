@@ -48,34 +48,10 @@ $(document).ready(() => {
   $("#error").hide();
   $(".new-tweet").hide();
   $("#topButton").hide();
-  const loadTweets = function () {
-    $.ajax({
-      url: "/tweets",
-      method: "GET",
-    }).then((tweets) => {
-      renderTweets(tweets);
-      console.log("AJAX request successful");
-    });
-  };
 
   loadTweets();
-
-  $("body > nav > a").on("click", function () {
-    $(".new-tweet").toggle();
-  });
-
-  $(window).scroll(function () {
-    if ($(".container").scrollTop() > 500) {
-      $("#topButton").hide();
-    } else {
-      $("#topButton").show();
-    }
-  });
-
-  $("#topButton").on("click", function (e) {
-    e.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, "300");
-  });
+  toggleTweet();
+  scrollButton();
 
   $("form").on("submit", (event) => {
     event.preventDefault();
