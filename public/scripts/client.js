@@ -47,6 +47,7 @@ const validateTweet = function (tweetBody) {
 $(document).ready(() => {
   $("#error").hide();
   $(".new-tweet").hide();
+  $("#topButton").hide();
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
@@ -61,6 +62,19 @@ $(document).ready(() => {
 
   $("body > nav > a").on("click", function () {
     $(".new-tweet").toggle();
+  });
+
+  $(window).scroll(function () {
+    if ($(".container").scrollTop() > 500) {
+      $("#topButton").hide();
+    } else {
+      $("#topButton").show();
+    }
+  });
+
+  $("#topButton").on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "300");
   });
 
   $("form").on("submit", (event) => {

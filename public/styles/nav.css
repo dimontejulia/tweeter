@@ -40,3 +40,23 @@ b {
 a:hover #bird {
   top: -10px;
 }
+
+#topButton {
+  background: #ed75ff;
+  background-color: #ed75ff;
+  font-weight: bolder;
+  font-size: 150%;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+#topButton:hover {
+  cursor: pointer;
+  background: #f29fff;
+  background-color: #f29fff;
+}
