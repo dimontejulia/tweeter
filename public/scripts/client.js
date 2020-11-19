@@ -6,6 +6,7 @@
 
 //takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet
 const createTweetElement = function (tweetObj) {
+  const content = $("<div>").text(tweetObj.content.text).html();
   const tweet = `<article>
   <header>
     <img src="${tweetObj.user.avatars}" />
@@ -13,7 +14,7 @@ const createTweetElement = function (tweetObj) {
     <a class="handle" href="#">${tweetObj.user.handle}</a>
   </header>
   <p class="tweet-body">
-  ${tweetObj.content.text}
+  ${content}
   </p>
   <footer>
     <p>10 days ago</p>
@@ -27,20 +28,30 @@ const createTweetElement = function (tweetObj) {
 //taking in an array of tweet objects and then appending each one to the #tweets-container
 const renderTweets = function (arrOfTweets) {
   // loops through tweets
-  for (const tweet of arrOfTweets) {
+  for (let tweet of arrOfTweets) {
     $("#tweets-container").prepend(createTweetElement(tweet));
   }
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  console.log(div);
+  return div.innerHTML;
+};
+
 const validateTweet = function (tweetBody) {
   if (tweetBody.length <= 140 && tweetBody !== "" && tweetBody !== null) {
+    $("#error").hide();
     return true;
   } else {
-    alert("invalid tweet!");
+    $("#error").show();
+    return false;
   }
 };
 
 $(document).ready(() => {
+  $("#error").hide();
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
@@ -56,16 +67,15 @@ $(document).ready(() => {
   $("form").on("submit", (event) => {
     event.preventDefault();
 
-    const tweetBody = $("form textarea").val();
-    if (validateTweet(tweetBody)) {
-      const serializedForm = $("form").serialize();
-      //ajax request
-      $.ajax({
-        url: "/tweets",
-        method: "POST",
-        data: serializedForm,
-      }).then(() => loadTweets());
-      $("#tweet-text").val("");
-    }
+    const tweetBody = validateTweet($("form textarea").val());
+    const serializedForm = $("form").serialize();
+    //ajax request
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: serializedForm,
+    }).then(() => loadTweets());
+    $("#tweet-text").val("");
+    $(".counter").val(140);
   });
 });

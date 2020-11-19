@@ -38,3 +38,11 @@ output {
 .negativeNum {
   color: red;
 }
+
+#error {
+  border: solid red;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  padding: 1px;
+}
