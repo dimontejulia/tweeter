@@ -5,6 +5,7 @@ Tweeter is a simple, single-page Twitter clone.
 User can compose tweets and browse tweets on the Tweeter page. Tweets must be less than 140 characters otherwise an error message will be displayed. To compose a tweet, the user must click the "write new tweet" to toggle the text area. While the user is scrolling through the tweets and wishes to return to the top of the page they can click the arrow button in the bottom right corner. The Tweeter app is responsive on mobile, tablet and desktop devices.
 
 Julia Di Monte
+
 November 19, 2020
 
 ## Screenshots
